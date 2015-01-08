@@ -143,3 +143,15 @@ func TestFabs(t *testing.T) {
 	assertEqual(math.Abs(5.3), Fabs(5.3), t)
 	assertEqual(math.Abs(0), Fabs(0), t)
 }
+
+func BenchmarkLogStandartGolang(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		math.Log(345.236)
+	}
+}
+
+func BenchmarkLog(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Log(345.236)
+	}
+}
